@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class Main {
   static Scanner leer = new Scanner(System.in);
-  
-public static Agenda agenda = new Agenda(new ArrayList<Evento>(Arrays.asList(new Evento("Evento 1", "Lunes", "10:00", "Lugar 1", "Descripcion 1", 0))));
-  public static Evento evento = new Evento("Evento 2", "Martes", "11:00", "Lugar 2", "Descripcion 2", 0);
+
+  //Listas
+public static Agenda agenda = new Agenda(new ArrayList<Evento>(Arrays.asList(new Evento("Evento 1", "Lunes",        "10:00", "Lugar 1", "Descripcion 1", 0))));
+  public static Evento evento = new Evento("Evento 2", "Martes", "11:00", "Lugar 2", "Descripcion 2", 1);
   
   public static void main(String[] args) {
     int opcion;
@@ -24,7 +25,10 @@ public static Agenda agenda = new Agenda(new ArrayList<Evento>(Arrays.asList(new
       agenda.agregarEvento(evento);
       opcion = leer.nextInt();
       leer.nextLine();
-      switch (opcion){
+      
+      Agendatest2.runtest2();
+      
+      switch (opcion) {
         case 1:
           agregarEvento();//agregar evento
           break;
@@ -82,6 +86,9 @@ public static Agenda agenda = new Agenda(new ArrayList<Evento>(Arrays.asList(new
       if(evento.getId() == id) {
         agenda.eliminarEvento(evento);
         System.out.println("Evento eliminado correctamente :)");
+      }
+      else {
+        System.out.println("No se encontro el evento :/");
       }
     }
   }
